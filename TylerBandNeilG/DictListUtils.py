@@ -7,25 +7,24 @@ __testPassed = 0
 __testCount = 0
 
 def main():
-    test_func1()
+    test_getMissingKeys()
     print "\n%i of %i tests passed" % (__testPassed, __testCount)
     help(__name__)
 
-def func1(params):
-    """Function documentation:
-       - What does function do?
-       - What is/are expected parameter value(s)?
-       - What does function return, if anything
-       - Example usage"""
-    pass
+def getMissingKeys(dictRef, dictToCompare):
+    missing = []
+    for keys in dictRef:
+        if dictToCompare.has_key == False:
+            missing.extend()
+    return missing
 
 def func2(params):
     pass
 
-def test_func1():
+def test_getMissingKeys():
     # Test case 1
-    expect = ''
-    actual = func1(0)
+    expect = '[1,3]'
+    actual = getMissingKeys({1:1, 2:2, 3:3}, {2:2})
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
 
