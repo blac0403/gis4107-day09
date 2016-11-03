@@ -17,7 +17,7 @@ def getMissingKeys(dictRef,dictToCompare):
     return missing
 
 
-
+##Q2
 def getMissingKeysWithCount(dictRef,dictToCompare):
     keys = getMissingKeys(dictRef,dictToCompare)
     keyLength = len(keys)
@@ -29,6 +29,7 @@ def test_getMissingKeysWithCount():
 
 test_getMissingKeysWithCount()
 
+##Q3
 def getUnique(inList):
     uniqueList = []
     for unique in inList:
@@ -43,7 +44,7 @@ def test_getUnique():
 
 test_getUnique()
 
-
+##Q4
 def flattenList(inList):
     flatList = []
     for instance in inList:
