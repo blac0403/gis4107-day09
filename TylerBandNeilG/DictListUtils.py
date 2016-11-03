@@ -8,6 +8,7 @@ __testCount = 0
 
 def main():
     test_getMissingKeys()
+    test_getMissingKeysWithCount()
     print "\n%i of %i tests passed" % (__testPassed, __testCount)
     # If you uncomment the following help statement, help for this module will be
     # output to the interpreter console.  You will notice the variables prefixed
@@ -23,26 +24,57 @@ def getMissingKeys(dictRef, dictToCompare):
             missing.append(item)
     return missing
 
-def getMissingKeysWithCount(dictRef, dictToCompare):
+def getMissingKeysWithCount(dictRef,dictToCompare):
+    keys = getMissingKeys(dictRef,dictToCompare)
+    keyLength = len(keys)
+    return keyLength, keys
 
-    return len(missing).append(getMissingKeys(dictRef, dictToCompare))
+##def getUnique(inList):
+##    uniqueList = []
+##    for unique in inList:
+##        if unique in uniqueList:
+##            continue
+##        else:
+##            uniqueList.append(unique)
+##    return uniqueList
 
+##Fucntion Tests
 
 def test_getMissingKeys():
     # Test case 1
-    expect = '[1,3]'
+    expect = '[1, 3]'
     actual = getMissingKeys({1:1, 2:2, 3:3}, {2:4})
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
 
-    print getMissingKeysWithCount({1:1, 2:2, 3:3}, {2:4})
+def test_getMissingKeysWithCount():
+    # Test Case 2
+    expect = '(2, [1, 3])'
+    actual = getMissingKeysWithCount({1:1,2:2,3:3}, {2:2})
+    funcName = inspect.stack()[0][3][5:]
+    printTestResult(funcName, expect, actual)
+
+##def test_getUnique():
+##    # Test Case 3
+##    expect = '(2, [1, 3])'
+##    actual = getUnique([1,2,2,3,3,4,5])
+##    funcName = inspect.stack()[0][3][5:]
+##    printTestResult(funcName, expect, actual)
+
+##def test_getMissingKeysWithCount():
+##    # Test Case 4
+##    expect = '(2, [1, 3])'
+##    actual = getMissingKeysWithCount({1:1,2:2,3:3}, {2:2})
+##    funcName = inspect.stack()[0][3][5:]
+##    printTestResult(funcName, expect, actual)
+
 
 def printTestResult(funcName, expect, actual):
     global __testPassed
     global __testCount
     __testCount += 1
     if actual == expect:
-        print __fmtPassed % funcName
+        print __fmtPassed.format(funcName)
         __testPassed += 1
     else:
         print __fmtFailed.format(funcName, expect, actual)
