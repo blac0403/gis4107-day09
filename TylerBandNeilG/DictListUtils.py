@@ -60,28 +60,28 @@ def flattenList(inList):
 
 def test_getMissingKeys():
     # Test case 1
-    expect = '[1, 3]'
+    expect = [1, 3]
     actual = getMissingKeys({1:1, 2:2, 3:3}, {2:4})
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
 
 def test_getMissingKeysWithCount():
     # Test Case 2
-    expect = '(2, [1, 3])'
+    expect = (2, [1, 3])
     actual = getMissingKeysWithCount({1:1,2:2,3:3}, {2:2})
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
 
 def test_getUnique():
     # Test Case 3
-    expect = '[1, 2, 3, 4, 5]'
+    expect = [1, 2, 3, 4, 5]
     actual = getUnique([1,2,2,3,3,4,5])
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
 
 def test_flattenList():
     # Test Case 4
-    expect = '[1, 2, 3, 4, 5, 6]'
+    expect = [1, 2, 3, 4, 5, 6]
     actual = flattenList([1,(2,3),4,[5,6]])
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)
