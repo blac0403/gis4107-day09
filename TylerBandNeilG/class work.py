@@ -53,7 +53,6 @@ def flattenList(inList):
             for newInstance in instance:
                 flatList.append(newInstance)
         if type(instance) == list:
-            list(instance)
             for newInstance in instance:
                 flatList.append(newInstance)
 
