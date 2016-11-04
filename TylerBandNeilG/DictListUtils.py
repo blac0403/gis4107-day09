@@ -48,7 +48,6 @@ def flattenList(inList):
             for newInstance in instance:
                 flatList.append(newInstance)
         if type(instance) == list:
-            list(instance)
             for newInstance in instance:
                 flatList.append(newInstance)
 
@@ -60,7 +59,7 @@ def flattenList(inList):
 
 def test_getMissingKeys():
     # Test case 1
-    expect = '[1, 3]'
+    expect = "[1, 3]"
     actual = getMissingKeys({1:1, 2:2, 3:3}, {2:4})
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName, expect, actual)

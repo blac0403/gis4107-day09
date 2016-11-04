@@ -25,22 +25,27 @@ def main():
     print "\n%i of %i tests passed" % (testPassed, testCount)
 
 def getDayNameFromList(dayNumber):
-    pass
+    return  listDays[dayNumber-1]
 
 def getDayNameFromTuple(dayNumber):
-    pass
+    return tupleDays[dayNumber-1]
 
 def getDayNameFromDict(dayNumber):
-    pass
+    return dictDays[dayNumber]
 
 def getDayNamesFromList(firstDayNumber, lastDayNumber):
-    pass
+    return listDays[firstDayNumber-1:lastDayNumber]
 
 def getDayNamesFromTuple(firstDayNumber, lastDayNumber):
-    pass
+    return list(tupleDays)[firstDayNumber-1:lastDayNumber]
 
 def getDayNamesFromDict(firstDayNumber, lastDayNumber):
-    pass
+    days = []
+    for i in range(firstDayNumber, lastDayNumber+1):
+        days += dictDays[i],
+    return days
+
+
 
 # ------------------------------------------------------------------------------
 # Tests setup
@@ -57,37 +62,37 @@ fmtFailed = "Failed: %s\n  Expected: %s\n  Actual: %s"
 # Tests
 # ------------------------------------------------------------------------------
 def test_getDayNameFromList():
-    expect = ''
+    expect = 'Tuesday'
     actual = getDayNameFromList(dayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
 
 def test_getDayNameFromTuple():
-    expect = ''
+    expect = 'Tuesday'
     actual = getDayNameFromTuple(dayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
 
 def test_getDayNameFromDict():
-    expect = ''
+    expect = 'Tuesday'
     actual = getDayNameFromDict(dayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
 
 def test_getDayNamesFromList():
-    expect = []
+    expect = ['Wednesday', 'Thursday', 'Friday', 'Saturday']
     actual = getDayNamesFromList(firstDayNumber, lastDayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
 
 def test_getDayNamesFromTuple():
-    expect = []
+    expect = ['Wednesday', 'Thursday', 'Friday', 'Saturday']
     actual = getDayNamesFromTuple(firstDayNumber, lastDayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
 
 def test_getDayNamesFromDict():
-    expect = []
+    expect = ['Wednesday', 'Thursday', 'Friday', 'Saturday']
     actual = getDayNamesFromDict(firstDayNumber, lastDayNumber)
     funcName = inspect.stack()[0][3][5:]
     printTestResult(funcName,expect, actual)
