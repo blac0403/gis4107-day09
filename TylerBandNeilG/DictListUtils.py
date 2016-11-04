@@ -80,7 +80,6 @@ def test_getUnique():
 
 def test_flattenList():
     # Test Case 4
-   expect = '[1, 2, 3, 4, 5, 6]'
     expect = [1, 2, 3, 4, 5, 6]
     actual = flattenList([1,(2,3),4,[5,6]])
     funcName = inspect.stack()[0][3][5:]
